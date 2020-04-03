@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+    <script src="lib.js"></script>
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+
+    <script>
+        QUnit.test("test - hallo", function (assert) {
+            var actualResult = translatex('hallo');
+            var expectedResult = 'hohalollolo';
+            assert.equal(actualResult, expectedResult);
+        });
+
+        QUnit.test("test - google", function (assert) {
+            var actualResult = translatex('google');
+            var expectedResult = 'gogoogoglole';
+            assert.equal(actualResult, expectedResult);
+        });
+
+        QUnit.test("test - Terje", function (assert) {
+            var actualResult = translatex('Terje');
+            var expectedResult = 'Toterorjoje';
+            assert.equal(actualResult, expectedResult);
+        });
+
+        QUnit.test("test - Terje er tøffest!", function (assert) {
+            var actualResult = translatex('Terje er tøffest!');
+            var expectedResult = 'Toterorjoje eror totøfoffofesostot!';
+            assert.equal(actualResult, expectedResult);
+        });
+
+        QUnit.test("test - blank", function (assert) {
+            var actualResult = translatex('');
+            var expectedResult = '';
+            assert.equal(actualResult, expectedResult);
+        });
+
+        QUnit.test("test - null", function (assert) {
+            var actualResult = translatex(null);
+            var expectedResult = null;
+            assert.equal(actualResult, expectedResult);
+        });
+    </script>
+</body>
+
+</html>
